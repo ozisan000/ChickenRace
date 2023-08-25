@@ -4,10 +4,11 @@ endDist = 16
 isStop = False
 speed = 0.4
 move = 0.0
+title = "title @a title "
 
 agent.teleport(world(0, -60, 0), SOUTH)
 
-player.execute("title @a title ゲーム開始")
+player.execute(title + "ゲーム開始")
 loops.pause(1000)
 
 while True:
@@ -22,6 +23,6 @@ while True:
     agent.teleport(world(0 ,-60 ,move), SOUTH)
 
 if isStop:
-    player.execute("title @a title 残り:" + Math.round_with_precision(endDist - move , 2) + "m!")
+    player.execute(title + "残り:" + Math.round_with_precision(endDist - move , 2) + "m!")
 else:
-    player.execute("title @a title GameOver!")
+    player.execute(title + "GameOver!")
